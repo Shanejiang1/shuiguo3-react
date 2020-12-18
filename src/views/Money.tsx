@@ -13,7 +13,7 @@ const TagsSection = styled.section`
       padding: 3px 18px;
       font-size: 14px;
       margin: 8px 12px;
-      color: #ababab;
+      color: #a0a0a0;
     }
   }
   > button{
@@ -26,7 +26,6 @@ const TagsSection = styled.section`
   }
 `;
 const NotesSection = styled.section`
-  background: #f3f3f3;
   padding: 0 16px;
   font-size: 14px;
   > label{
@@ -46,7 +45,22 @@ const NotesSection = styled.section`
   }
 `;
 const CategorySection = styled.section`
-
+  font-size: 24px;
+  > ul{
+    display: flex;
+    background: #eeeeee;
+    //color: ;
+    > li{
+      width: 50%;
+      text-align: center;
+      color: #a0a0a0;
+      padding: 16px 0;
+      &.selected{
+      background: #3876f6;
+      color: #ffffff;
+      }
+    }
+  }
 `;
 const NumberPadSection = styled.section`
 
@@ -73,7 +87,7 @@ function Money() {
       </NotesSection>
       <CategorySection>
         <ul>
-          <li>支出</li>
+          <li className="selected">支出</li>
           <li>收入</li>
         </ul>
       </CategorySection>
