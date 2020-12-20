@@ -9,6 +9,7 @@ import {Center} from 'components/Center';
 import {Space} from 'components/Space';
 
 const TagList = styled.ol`
+  background: #ffffff;
   font-size: 16px;
   > li{
     border-bottom: 1px solid #eeeeee;
@@ -22,11 +23,16 @@ const TagList = styled.ol`
     }
   }
 `;
+const All = styled.div`
+  background: #f5f5f5;
+`
+
 
 
 function Tags() {
   const {tags} = useTags();
   return (
+    <All>
     <Layout>
       <TagList>
         {tags.map(tag =>
@@ -45,6 +51,7 @@ function Tags() {
         <Button>新增标签</Button>
       </Center>
     </Layout>
+    </All>
   );
 }
 

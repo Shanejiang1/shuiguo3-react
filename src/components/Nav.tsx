@@ -4,6 +4,7 @@ import React from 'react';
 import Icon from './Icon';
 
 const NavWrapper = styled.nav`
+  background: #ffffff;
   line-height: 24px;
   box-shadow: 0 0 3px rgba(0,0,0,0.25);
   > ul{
@@ -39,19 +40,19 @@ const Nav = () => {
         <li>
           <NavLink to="/tags" activeClassName="selected">
             <Icon name={'tag'}/>
-            标签页
+            标签
           </NavLink>
         </li>
         <li>
           <NavLink to="/money" activeClassName="selected">
             <Icon name={'money'} />
-            记账页
+            记账
           </NavLink>
         </li>
         <li>
           <NavLink to="/statistics" activeClassName="selected">
             <Icon name={'chart'} />
-            统计页
+            统计
           </NavLink>
         </li>
       </ul>

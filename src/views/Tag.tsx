@@ -18,12 +18,22 @@ const Topbar = styled.header`
   align-items: center;
   line-height: 20px;
   padding: 14px;
+  background: #ffffff;
 `;
 const InputWrapper = styled.div`
-  background: #f5f5f5;
   padding: 0 16px;
   margin-top: 8px;
+  background: #ffffff;
 `;
+const Ol = styled.ol`
+  > button{
+    background: #ec6a30;
+  }
+`;
+const All = styled.div`
+  background: #f5f5f5;
+`
+
 
 const Tag: React.FC = () => {
   const {findTag, updateTag, deleteTag} = useTags();
@@ -42,12 +52,15 @@ const Tag: React.FC = () => {
         <Space/>
         <Space/>
         <Space/>
-        <Button onClick={() => deleteTag(tag.id)}>删除标签</Button>
+        <Ol>
+          <Button onClick={() => deleteTag(tag.id)}>删除标签</Button>
+        </Ol>
       </Center>
     </div>
   );
 
   return (
+    <All>
     <Layout>
       <Topbar>
         <Icon name="left"/>
@@ -56,8 +69,8 @@ const Tag: React.FC = () => {
       </Topbar>
 
       {tag ? tagContent(tag) : <Center>tag 不存在</Center>}
-
     </Layout>
+    </All>
   );
 };
 
