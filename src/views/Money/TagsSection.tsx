@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, {useState} from 'react';
+import React from 'react';
 import {useTags} from 'useTags';
 
 const Wrapper = styled.section`
@@ -13,7 +13,7 @@ const Wrapper = styled.section`
     margin: 0 -12px;
     > li{
       background: #eeeeee;
-      border-radius: 12px;
+      border-radius: 10px;
       display: inline-block;
       padding: 10px 16px;
       font-size: 14px;
