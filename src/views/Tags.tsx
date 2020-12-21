@@ -25,32 +25,30 @@ const TagList = styled.ol`
 `;
 const All = styled.div`
   background: #f5f5f5;
-`
-
-
+`;
 
 function Tags() {
   const {tags, addTag} = useTags();
   return (
     <All>
-    <Layout>
-      <TagList>
-        {tags.map(tag =>
-          <li key={tag.id}>
-            <Link to={'/tags/' + tag.id}>
-            <span className="oneLine">{tag.id}:{tag.name}</span>
-            <Icon name="right"/>
-            </Link>
-          </li>
-        )}
-      </TagList>
-      <Center>
-        <Space/>
-        <Space/>
-        <Space/>
-        <Button onClick={addTag}>新增标签</Button>
-      </Center>
-    </Layout>
+      <Layout>
+        <TagList>
+          {tags.map(tag =>
+            <li key={tag.id}>
+              <Link to={'/tags/' + tag.id}>
+                <span className="oneLine">{tag.name}</span>
+                <Icon name="right"/>
+              </Link>
+            </li>
+          )}
+        </TagList>
+        <Center>
+          <Space/>
+          <Space/>
+          <Space/>
+          <Button onClick={addTag}>新增标签</Button>
+        </Center>
+      </Layout>
     </All>
   );
 }
