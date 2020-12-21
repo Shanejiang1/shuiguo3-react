@@ -37,8 +37,6 @@ function Money() {
   };
   return (
     <MyLayout>
-      {JSON.stringify(selected)}
-      <hr/>
       <TagsSection value={selected.tagIds}
                    onChange={tagIds => onChange({tagIds: tagIds})}/>
       <NoteSection value={selected.note}
