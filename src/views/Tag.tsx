@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTags} from 'useTags';
-import {useParams} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
 import Layout from 'components/Layout';
 import Icon from 'components/Icon';
 import {Button} from 'components/Button';
@@ -32,7 +32,7 @@ const Ol = styled.ol`
 `;
 const All = styled.div`
   background: #f5f5f5;
-`
+`;
 
 
 const Tag: React.FC = () => {
@@ -58,18 +58,22 @@ const Tag: React.FC = () => {
       </Center>
     </div>
   );
+  const history = useHistory();
+  const onClickBack = () => {
+    history.goBack();
+  };
 
   return (
     <All>
-    <Layout>
-      <Topbar>
-        <Icon name="left"/>
-        <span>编辑标签</span>
-        <Icon/>
-      </Topbar>
+      <Layout>
+        <Topbar>
+          <Icon name="left" onClick={onClickBack}/>
+          <span>编辑标签</span>
+          <Icon/>
+        </Topbar>
 
-      {tag ? tagContent(tag) : <Center>tag 不存在</Center>}
-    </Layout>
+        {tag ? tagContent(tag) : <Center>tag 不存在</Center>}
+      </Layout>
     </All>
   );
 };
