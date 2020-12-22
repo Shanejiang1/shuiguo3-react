@@ -20,6 +20,11 @@ const Wrapper = styled.section`
       border: 4px solid #f5f5f5;
       background: #ffffff;
       
+      .icon{
+        font-size: 32px;
+        pointer-events: none;
+      }
+      
       &.ok{
         height: 192px;
         float: right;

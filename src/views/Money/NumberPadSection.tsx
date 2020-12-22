@@ -25,13 +25,15 @@ const NumberPadSection: React.FC<Props> = (props) => {
     props.onChange(parseFloat(newOutput));
   };
   const onClickButtonWrapper = (e: React.MouseEvent) => {
-    const text = (e.target as HTMLButtonElement).textContent;
+    const element = e.target as HTMLButtonElement;
+    const text = element.textContent
+      || element.getAttribute('data-text');
     if (text === null) {return;}
     if (text === '完成') {
       if (props.onOk) {props.onOk();}
       return;
     }
-    if ('0123456789.'.split('').concat(['删除']).indexOf(text) >= 0) {
+    if ('0123456789.'.split('').concat(['remove']).indexOf(text) >= 0) {
       setOutput(generateOutput(text, output));
     }
   };
@@ -44,9 +46,8 @@ const NumberPadSection: React.FC<Props> = (props) => {
         <button>1</button>
         <button>2</button>
         <button>3</button>
-        <button>
-          删除
-          {/*<Icon name='delete'/>*/}
+        <button data-text='remove'>
+          <Icon name='delete'/>
         </button>
         <button>4</button>
         <button>5</button>

@@ -21,7 +21,7 @@ const generateOutput = (text: string, output = '0') => {
         return output;
       }
       return output + '.';
-    case '删除':
+    case 'remove':
       if (output.length === 1) {
         return '';
       } else {
