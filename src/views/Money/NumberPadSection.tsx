@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Wrapper} from './NumberPadSection/Wrapper';
 import {generateOutput} from './NumberPadSection/generateOutput';
+import Icon from '../../components/Icon';
 
 type Props = {
   value: number;
@@ -33,7 +34,6 @@ const NumberPadSection: React.FC<Props> = (props) => {
     if ('0123456789.'.split('').concat(['删除']).indexOf(text) >= 0) {
       setOutput(generateOutput(text, output));
     }
-
   };
   return (
     <Wrapper>
@@ -44,7 +44,10 @@ const NumberPadSection: React.FC<Props> = (props) => {
         <button>1</button>
         <button>2</button>
         <button>3</button>
-        <button>删除</button>
+        <button>
+          删除
+          {/*<Icon name='delete'/>*/}
+        </button>
         <button>4</button>
         <button>5</button>
         <button>6</button>
