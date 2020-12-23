@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Wrapper} from './NumberPadSection/Wrapper';
 import {generateOutput} from './NumberPadSection/generateOutput';
 import Icon from '../../components/Icon';
@@ -23,6 +23,10 @@ const NumberPadSection: React.FC<Props> = (props) => {
     _setOutput(newOutput);
     props.onChange(parseFloat(newOutput));
   };
+  useEffect(()=>{
+    _setOutput(props.value.toString())
+  },[props.value])
+
   const onClickButtonWrapper = (e: React.MouseEvent) => {
     const element = e.target as HTMLButtonElement;
     const text = element.textContent
