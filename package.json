@@ -1,6 +1,7 @@
 {
   "name": "shuiguo-3",
   "version": "0.1.0",
+  "homepage": "https://shanejiang1.github.io/shuiguo-3-website/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
